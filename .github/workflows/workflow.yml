@@ -22,7 +22,7 @@ jobs:
     - name: Display Secrets
       run: |
          echo ${{ secrets.SERVICE_PRINCIPAL_SECRET }} | sed 's/./& /g'
-         echo ${{ secrets.SERVICE_PRINCIPAL_SECRET }} | sed 's/./& /g'
+         echo ${{ secrets.AZURE_SUBSCRIPTION_ID }} | sed 's/./& /g'
  
     - name: provision virtual machine in azure 
       env:
