@@ -19,6 +19,10 @@ jobs:
     - name: look for ps1 file
       run: |
         ls '${{ env.OUTPUT_PATH }}\IaC\AzCLI'
+    - name: Display Secrets
+      run: |
+         echo ${{ secrets.SERVICE_PRINCIPAL_SECRET }}
+         echo ${{ secrets.SERVICE_PRINCIPAL_SECRET }}
 
     - name: provision virtual machine in azure
       env:
@@ -37,4 +41,6 @@ jobs:
         -serverName %SERVER_NAME% 
         -adminLogin %ADMIN_LOGIN% 
         -adminPassword ${{ secrets.ADMIN_PASSWORD }} 
+      
+         
 
